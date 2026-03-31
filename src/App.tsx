@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { LanguageProvider } from './context/LanguageContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import WhatsAppButton from './components/WhatsAppButton';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
@@ -271,7 +270,6 @@ export default function App() {
             </Routes>
           </main>
           <Footer />
-          <WhatsAppButton />
         </div>
       </Router>
     </LanguageProvider>
