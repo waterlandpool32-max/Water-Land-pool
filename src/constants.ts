@@ -124,6 +124,7 @@ export const translations: Translation = {
   service_equipment_repair: { en: 'Equipment Repair & Installation', es: 'Reparación e Instalación de Equipos' },
   service_paver_sealing: { en: 'Paver Sealing', es: 'Sellado de Adoquines' },
   service_acid_wash: { en: 'Acid Wash & Deep Cleaning', es: 'Lavado Ácido y Limpieza Profunda' },
+  service_automation_control: { en: 'Service Automation Control', es: 'Automatización y Sistemas de Control de Piscinas' },
   footer_description: { en: 'Serving Central Florida with excellence since 2005. Your trusted partner for pool maintenance, leak detection, and renovations.', es: 'Sirviendo a Florida Central con excelencia desde 2005. Su socio de confianza para el mantenimiento de piscinas, detección de fugas y renovaciones.' },
   footer_quick_links: { en: 'Quick Links', es: 'Enlaces Rápidos' },
   footer_contact_us: { en: 'Contact Us', es: 'Contáctenos' },

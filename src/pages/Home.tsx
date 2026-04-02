@@ -1,17 +1,34 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { motion } from 'motion/react';
-import { Droplets, ShieldCheck, Clock, Users, ChevronRight, Layout, Sparkles, Wrench } from 'lucide-react';
+import { ShieldCheck, Clock, Users, ChevronRight } from 'lucide-react';
 import EstimateForm from '../components/EstimateForm';
 
 export default function Home() {
   const { t } = useLanguage();
 
   const services = [
-    { title: t('service_renovations_title'), icon: <Layout />, priority: true, path: '/services/renovations' },
-    { title: t('service_cleaning_title'), icon: <Sparkles />, path: '/services/cleaning' },
-    { title: t('service_equipment_title'), icon: <Wrench />, path: '/services/equipment' },
-    { title: t('service_acid_wash_title'), icon: <Droplets />, path: '/services/acid-wash' },
+    { 
+      title: t('service_renovations_title'), 
+      icon: <img src="https://drive.google.com/thumbnail?id=1KAtvGrDfRpj5nUm6Z414uoBDxbFRXNqN&sz=w200" className="w-[100px] h-[100px] object-contain" alt="Renovation Icon" referrerPolicy="no-referrer" />, 
+      priority: true, 
+      path: '/services/renovations' 
+    },
+    { 
+      title: t('service_cleaning_title'), 
+      icon: <img src="https://drive.google.com/thumbnail?id=1crlB1Q9AxAK9sxIL4a45rMWIbQBhB6Ch&sz=w200" className="w-[100px] h-[100px] object-contain" alt="Cleaning Icon" referrerPolicy="no-referrer" />, 
+      path: '/services/cleaning' 
+    },
+    { 
+      title: t('service_equipment_title'), 
+      icon: <img src="https://drive.google.com/thumbnail?id=1-pPSPyVffOBBFxsub6_H-alVApPDgp3W&sz=w200" className="w-[100px] h-[100px] object-contain" alt="Equipment Icon" referrerPolicy="no-referrer" />, 
+      path: '/services/equipment' 
+    },
+    { 
+      title: t('service_acid_wash_title'), 
+      icon: <img src="https://drive.google.com/thumbnail?id=1GZ31v4deLDAuHUl2GPcfj0t2yMGmAQxl&sz=w200" className="w-[100px] h-[100px] object-contain" alt="Acid Wash Icon" referrerPolicy="no-referrer" />, 
+      path: '/services/acid-wash' 
+    },
   ];
 
   return (
@@ -111,7 +128,7 @@ export default function Home() {
                 whileHover={{ y: -10 }}
                 className={`p-8 rounded-2xl bg-white shadow-lg border-t-4 ${service.priority ? 'border-brand-light' : 'border-brand-dark'}`}
               >
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 ${service.priority ? 'bg-brand-light text-white' : 'bg-brand-dark/10 text-brand-dark'}`}>
+                <div className="w-[110px] h-[110px] flex items-center justify-center mb-6">
                   {service.icon}
                 </div>
                 <h3 className="text-xl font-bold text-brand-dark mb-4">{service.title}</h3>
