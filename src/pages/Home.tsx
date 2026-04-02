@@ -11,7 +11,6 @@ export default function Home() {
     { 
       title: t('service_renovations_title'), 
       icon: <img src="https://drive.google.com/thumbnail?id=1KAtvGrDfRpj5nUm6Z414uoBDxbFRXNqN&sz=w200" className="w-[100px] h-[100px] object-contain" alt="Renovation Icon" referrerPolicy="no-referrer" />, 
-      priority: true, 
       path: '/services/renovations' 
     },
     { 
@@ -126,7 +125,7 @@ export default function Home() {
               <motion.div
                 key={idx}
                 whileHover={{ y: -10 }}
-                className={`p-8 rounded-2xl bg-white shadow-lg border-t-4 ${service.priority ? 'border-brand-light' : 'border-brand-dark'}`}
+                className="p-8 rounded-2xl bg-white shadow-lg border-t-4 border-brand-dark"
               >
                 <div className="w-[110px] h-[110px] flex items-center justify-center mb-6">
                   {service.icon}
