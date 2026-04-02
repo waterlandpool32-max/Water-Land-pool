@@ -1,17 +1,17 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { motion } from 'motion/react';
-import { Droplets, ShieldCheck, Clock, Users, ChevronRight } from 'lucide-react';
+import { Droplets, ShieldCheck, Clock, Users, ChevronRight, Layout, Sparkles, Wrench } from 'lucide-react';
 import EstimateForm from '../components/EstimateForm';
 
 export default function Home() {
   const { t } = useLanguage();
 
   const services = [
-    { title: t('service_leak_title'), icon: <Droplets />, priority: true, path: '/services/leak-detection' },
-    { title: t('service_cleaning_title'), icon: <ShieldCheck />, path: '/services/cleaning' },
-    { title: t('service_renovations_title'), icon: <Users />, path: '/services/renovations' },
-    { title: t('service_equipment_title'), icon: <Clock />, path: '/services/equipment' },
+    { title: t('service_renovations_title'), icon: <Layout />, priority: true, path: '/services/renovations' },
+    { title: t('service_cleaning_title'), icon: <Sparkles />, path: '/services/cleaning' },
+    { title: t('service_equipment_title'), icon: <Wrench />, path: '/services/equipment' },
+    { title: t('service_acid_wash_title'), icon: <Droplets />, path: '/services/acid-wash' },
   ];
 
   return (
@@ -35,7 +35,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-white space-y-6"
           >
-            <span className="inline-block px-4 py-1 bg-brand-light/20 border border-brand-light/30 rounded-full text-brand-light font-bold text-sm tracking-widest uppercase">
+            <span className="inline-block px-4 py-1 bg-brand-light/20 border border-brand-light/30 rounded-full text-[#eeeeee] font-bold text-sm tracking-widest uppercase">
               {t('home_years_excellence')}
             </span>
             <h1 className="text-5xl md:text-7xl font-bold leading-tight">
@@ -45,7 +45,7 @@ export default function Home() {
               {t('hero_subtitle')}
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
-              <a href="#estimate" className="btn-primary">
+              <a href="#estimate" className="btn-primary !bg-white !text-[#002b62] hover:!bg-slate-100">
                 {t('cta_estimate')}
               </a>
               <a href="/services" className="btn-secondary border-white text-white hover:bg-white hover:text-brand-dark">
@@ -82,8 +82,8 @@ export default function Home() {
             </div>
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1562133567-b6a0a9c7e6eb?auto=format&fit=crop&q=80&w=1000" 
-                className="rounded-3xl shadow-2xl"
+                src="https://drive.google.com/thumbnail?id=1Tt2QD72zjdLGeBor8F2rXBTExjk2SxTM&sz=w1000" 
+                className="rounded-3xl shadow-2xl w-full aspect-[16/9] object-cover saturate-125 contrast-105 brightness-105"
                 alt="Family enjoying pool"
                 referrerPolicy="no-referrer"
               />
@@ -132,15 +132,7 @@ export default function Home() {
 
       {/* Why Choose Us */}
       <section className="py-24 bg-brand-dark text-white overflow-hidden relative">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://i.postimg.cc/cLWHcncT/piscina.png" 
-            className="w-full h-full object-cover opacity-40"
-            alt="Pool Background"
-            referrerPolicy="no-referrer"
-          />
-          <div className="absolute inset-0 bg-brand-dark/40"></div>
-        </div>
+        <div className="absolute inset-0 z-0 bg-gradient-to-br from-brand-dark via-[#002b62] to-[#001f4d]"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -165,9 +157,9 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <div className="bg-white/5 backdrop-blur-lg p-12 rounded-3xl border border-white/10 text-center space-y-6">
+            <div className="bg-white p-12 rounded-3xl text-center space-y-6 shadow-xl text-[#012848]">
               <h3 className="text-3xl font-bold">{t('home_ready_title')}</h3>
-              <p className="text-slate-300">{t('home_ready_subtitle')}</p>
+              <p className="text-[#606060]">{t('home_ready_subtitle')}</p>
               <a href="/contact" className="btn-primary inline-block w-full">
                 {t('cta_schedule')}
               </a>
