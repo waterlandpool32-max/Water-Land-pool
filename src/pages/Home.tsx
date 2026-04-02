@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { motion } from 'motion/react';
-import { ShieldCheck, Clock, Users, ChevronRight } from 'lucide-react';
+import { ShieldCheck, Clock, Users, ChevronRight, Award, CheckCircle, Wrench } from 'lucide-react';
 import EstimateForm from '../components/EstimateForm';
 
 export default function Home() {
@@ -28,6 +28,13 @@ export default function Home() {
       icon: <img src="https://drive.google.com/thumbnail?id=1GZ31v4deLDAuHUl2GPcfj0t2yMGmAQxl&sz=w200" className="w-[100px] h-[100px] object-contain" alt="Acid Wash Icon" referrerPolicy="no-referrer" />, 
       path: '/services/acid-wash' 
     },
+  ];
+
+  const stats = [
+    { val: t('home_stats_1_val'), label: t('home_stats_1_label'), icon: <Clock className="w-6 h-6" />, dark: false },
+    { val: t('home_stats_2_val'), label: t('home_stats_2_label'), icon: <Users className="w-6 h-6" />, dark: true },
+    { val: t('home_stats_3_val'), label: t('home_stats_3_label'), icon: <CheckCircle className="w-6 h-6" />, dark: true },
+    { val: t('home_stats_4_val'), label: t('home_stats_4_label'), icon: <Wrench className="w-6 h-6" />, dark: false },
   ];
 
   return (
@@ -146,40 +153,68 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-24 bg-brand-dark text-white overflow-hidden relative">
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-brand-dark via-[#002b62] to-[#001f4d]"></div>
-        
+      {/* Why Choose Us / Impactful Results */}
+      <section className="py-24 bg-slate-50 overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <h2 className="text-4xl font-bold leading-tight">{t('section_why_title')}</h2>
-              <div className="space-y-6">
-                {[
-                  { title: t('home_why_1_title'), desc: t('home_why_1_desc') },
-                  { title: t('home_why_2_title'), desc: t('home_why_2_desc') },
-                  { title: t('home_why_3_title'), desc: t('home_why_3_desc') },
-                  { title: t('home_why_4_title'), desc: t('home_why_4_desc') }
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-start space-x-4">
-                    <div className="mt-1 w-6 h-6 rounded-full bg-brand-light flex items-center justify-center shrink-0">
-                      <ShieldCheck size={14} />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-lg">{item.title}</h4>
-                      <p className="text-slate-400 text-sm">{item.desc}</p>
-                    </div>
+            <div className="space-y-6">
+              <span className="text-brand-light font-bold italic text-lg block">
+                {t('home_stats_subtitle')}
+              </span>
+              <h2 className="text-5xl font-bold text-brand-dark leading-tight">
+                {t('home_stats_title')}
+              </h2>
+              <p className="text-lg text-slate-600 leading-relaxed max-w-xl">
+                {t('home_stats_desc')}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 shadow-2xl rounded-3xl overflow-hidden">
+              {stats.map((stat, idx) => (
+                <div 
+                  key={idx} 
+                  className={`p-10 flex flex-col sm:flex-row items-center sm:items-start gap-6 ${stat.dark ? 'bg-brand-dark text-white' : 'bg-white text-brand-dark'}`}
+                >
+                  <div className={`w-16 h-16 rounded-full flex items-center justify-center shrink-0 ${stat.dark ? 'bg-brand-light/20 text-brand-light' : 'bg-brand-light/10 text-brand-light'}`}>
+                    {stat.icon}
                   </div>
-                ))}
-              </div>
+                  <div className="text-center sm:text-left">
+                    <p className="text-4xl font-bold mb-1">{stat.val}</p>
+                    <p className={`text-sm font-medium ${stat.dark ? 'text-slate-300' : 'text-slate-500'}`}>{stat.label}</p>
+                  </div>
+                </div>
+              ))}
             </div>
-            <div className="bg-white p-12 rounded-3xl text-center space-y-6 shadow-xl text-[#012848]">
-              <h3 className="text-3xl font-bold">{t('home_ready_title')}</h3>
-              <p className="text-[#606060]">{t('home_ready_subtitle')}</p>
-              <a href="/contact" className="btn-primary inline-block w-full">
-                {t('cta_schedule')}
-              </a>
-            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Ready to Start CTA */}
+      <section className="relative py-32 text-white overflow-hidden">
+        {/* Wave Divider */}
+        <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] z-10">
+          <svg className="relative block w-[calc(100%+1.3px)] h-[60px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className="fill-slate-50"></path>
+          </svg>
+        </div>
+
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1562133567-b6a0a9c7e6eb?auto=format&fit=crop&q=80&w=2000" 
+            className="w-full h-full object-cover"
+            alt="Pool Background"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-brand-dark/85"></div>
+        </div>
+
+        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center space-y-8">
+          <h3 className="text-4xl font-bold">{t('home_ready_title')}</h3>
+          <p className="text-xl text-slate-200">{t('home_ready_subtitle')}</p>
+          <div className="pt-4">
+            <a href="/contact" className="btn-primary !px-12 !py-4 text-lg !bg-brand-light hover:!bg-white hover:!text-brand-dark">
+              {t('cta_schedule')}
+            </a>
           </div>
         </div>
       </section>

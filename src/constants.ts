@@ -51,6 +51,17 @@ export const translations: Translation = {
   home_why_4_desc: { en: 'We treat every pool as if it were our own.', es: 'Tratamos cada piscina como si fuera la nuestra.' },
   home_ready_title: { en: 'Ready for a crystal clear pool?', es: '¿Listo para una piscina cristalina?' },
   home_ready_subtitle: { en: 'Join hundreds of satisfied homeowners in Orlando. Get your free estimate today.', es: 'Únase a cientos de propietarios satisfechos en Orlando. Obtenga su presupuesto gratuito hoy.' },
+  home_stats_subtitle: { en: 'Fun Facts', es: 'Datos Curiosos' },
+  home_stats_title: { en: "Why Homeowners Choose Waterland Pool's", es: "¿Por qué los propietarios eligen Waterland Pool's?" },
+  home_stats_desc: { en: 'Our commitment to excellence is reflected in every pool we service and every relationship we build.', es: 'Nuestro compromiso con la excelencia se refleja en cada piscina que atendemos y en cada relación que construimos.' },
+  home_stats_1_val: { en: '20+', es: '20+' },
+  home_stats_1_label: { en: 'Years of Experience', es: 'Años de Experiencia' },
+  home_stats_2_val: { en: '400+', es: '400+' },
+  home_stats_2_label: { en: 'Trusted Homeowners', es: 'Propietarios que Confían' },
+  home_stats_3_val: { en: '100%', es: '100%' },
+  home_stats_3_label: { en: 'Satisfaction Rate', es: 'Tasa de Satisfacción' },
+  home_stats_4_val: { en: '15+', es: '15+' },
+  home_stats_4_label: { en: 'Specialized Services', es: 'Servicios Especializados' },
 
   // Services
   service_leak_title: { en: 'Leak Detection', es: 'Detección de Fugas' },
